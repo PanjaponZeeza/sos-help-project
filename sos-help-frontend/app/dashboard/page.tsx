@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import toast, { Toaster } from "react-hot-toast"; // นำเข้า Modern Toast
+import api from "../../services/api"; // HTTP client พร้อมการจัดการ token
 
 export const dynamic = 'force-dynamic';
 const Map = nextDynamic(() => import("../../components/Map"), {  
@@ -35,6 +36,7 @@ export default function DashboardPage() {
 
   const fetchData = async () => {
     try {
+      // api ถูกนำเข้าไว้แล้วด้านบน ใช้สำหรับเรียก backend
       const token = localStorage.getItem("access_token");
       if (!token) return (window.location.href = "/");
       const decoded: any = jwtDecode(token);
