@@ -5,4 +5,4 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // ข้าม error eslint
   },
-};
+}; 
