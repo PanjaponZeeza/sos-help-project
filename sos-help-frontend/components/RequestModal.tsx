@@ -19,6 +19,7 @@ export default function RequestModal({ isOpen, onClose, onSuccess, editData = nu
   useEffect(() => {
     if (typeof window !== "undefined") {
       const L = require("leaflet");
+      // @ts-ignore
       import("leaflet/dist/leaflet.css");
       
       const icon = L.icon({
