@@ -1,0 +1,18 @@
+.env 
+# ข้อมูลความลับ 
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# โฟลเดอร์ขยะของระบบ 
+node_modules/
+dist/
+.next/
+out/
+build/
+
+# ไฟล์ขยะของระบบปฎิบัติการ
+.DS_Store
+Thumbs.db
