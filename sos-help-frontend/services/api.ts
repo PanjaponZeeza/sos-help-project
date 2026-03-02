@@ -1,0 +1,19 @@
+import axios from 'axios';
+
+// ชี้ไปที่ Backend NestJS ที่รันอยู่ที่พอร์ต 3000
+const API_URL = 'http://localhost:3000';
+
+const api = axios.create({
+  baseURL: API_URL,
+});
+
+// ดึง Token จากเครื่องผู้ใช้ส่งไปพร้อมกับ Request ทุกครั้ง
+api.interceptors.request.use((config) => {
+  const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default api;
