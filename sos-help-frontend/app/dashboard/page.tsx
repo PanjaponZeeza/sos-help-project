@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import api from "../../services/api";
+import nextDynamic from "next/dynamic"; 
 import RequestCard from "../../components/RequestCard";
 import RequestModal from "../../components/RequestModal";
 import { 
@@ -14,8 +13,7 @@ import { jwtDecode } from "jwt-decode";
 import toast, { Toaster } from "react-hot-toast"; // นำเข้า Modern Toast
 
 export const dynamic = 'force-dynamic';
-
-const Map = dynamic(() => import("../../components/Map"), { 
+const Map = nextDynamic(() => import("../../components/Map"), {  
   ssr: false,
   loading: () => (
     <div className="flex items-center justify-center h-[1050px] bg-slate-50 italic text-slate-400 font-medium border-2 border-dashed border-slate-200 rounded-[3rem]">
