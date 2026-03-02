@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-// ชี้ไปที่ Backend NestJS ที่รันอยู่ที่พอร์ต 3000
-const API_URL = 'http://localhost:3000';
+
+// ของใหม่ที่จะดึงค่าจาก Vercel Settings มาใช้
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const res = await axios.get(`${API_URL}/sos`);
 
 const api = axios.create({
   baseURL: API_URL,
