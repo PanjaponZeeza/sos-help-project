@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic';
 "use client";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
@@ -13,6 +12,8 @@ import {
 } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 import toast, { Toaster } from "react-hot-toast"; // นำเข้า Modern Toast
+
+export const dynamic = 'force-dynamic';
 
 const Map = dynamic(() => import("../../components/Map"), { 
   ssr: false,
